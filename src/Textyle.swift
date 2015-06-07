@@ -23,23 +23,24 @@ class TextStyle {
 }
 
 
-struct MyString: Printable {
-    //    enum Style = { case Bold, Italic }
+struct Text: Printable {
     
     static let scale = 100 / 3
+
     var actualString: String = ""
+    var segments : [TextMark]
     var description: String { return actualString }
     
-    //    init (strings: MyString...) {
+    //    init (strings: Text...) {
     //        actualString = strings[0].actualString
     //    }
 }
 
-func << (lhs :MyString, rhs :MyString) -> MyString {
-    return MyString (stringInterpolation: lhs, rhs)
+func << (lhs :Text, rhs :Text) -> Text {
+    return Text (stringInterpolation: lhs, rhs)
 }
 
-extension MyString: StringInterpolationConvertible {
+extension Text: StringInterpolationConvertible {
     // first, this will get called for each "segment"
     init<T>(stringInterpolationSegment expr: T) {
         println("Processing segment: " + toString(expr))
@@ -69,15 +70,15 @@ extension MyString: StringInterpolationConvertible {
             actualString = numbers[value]
         }
         else {
-            let r = value * MyString.scale
+            let r = value * Text.scale
             println("Processing segment: " + toString(r))
             actualString = toString(r)
         }
     }
     // finally, this gets called with an array of all of the
     // converted segments
-    init(stringInterpolation strings: MyString...) {
-        // strings will be a bunch of MyString objects
+    init(stringInterpolation strings: Text...) {
+        // strings will be a bunch of Text objects
         actualString = "".join(strings.map { $0.actualString })
     }
 }

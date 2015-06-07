@@ -20,3 +20,9 @@ Create NSAttributedStrings from Swift Strings
 [BMR Wikipedia](https://en.wikipedia.org/wiki/Basal_metabolic_rate)
 ## Navigation
 
+## Resource Links
+AsyncDisplayKit is an iOS framework that keeps even the most complex user interfaces smooth and responsive. It was originally built to make Facebook's Paper possible, and goes hand-in-hand with pop's physics-based animations — but it's just as powerful with UIKit Dynamics and conventional app designs.
+
+```ruby
+pod 'AsyncDisplayKit'
+```
