@@ -18,6 +18,9 @@ Create NSAttributedStrings from Swift Strings
 [BMR Calculator](http://www.bmrcalculator.org)
 
 [BMR Wikipedia](https://en.wikipedia.org/wiki/Basal_metabolic_rate)
+
+http://opendata.stackexchange.com/questions/269/open-api-for-nutritional-information-and-or-food-barcodes
+
 ## Navigation
 
 ## Resource Links

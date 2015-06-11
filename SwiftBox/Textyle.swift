@@ -5,8 +5,14 @@
 //  Created by Jason Jobe on 6/7/15.
 //  Copyright (c) 2015 WildThink. All rights reserved.
 //
-
 import Foundation
+
+protocol TextStylable {
+}
+
+protocol TextFormatable {
+}
+
 
 enum TextMark {
     case H1, H2
@@ -17,20 +23,31 @@ enum TextMark {
     case tab ([NSTextTab])
     case Body
     case Close
+    
+    // Common
 }
 
-class TextStyle {
+
+class TextStyles {
     var mark : TextMark
-    init (mark :TextMark) {
+    var attributes :[String:String]
+
+    init (mark :TextMark, attributes:[String:String]) {
         self.mark = mark
+        self.attributes = attributes
     }
 }
 
+class TextFormat {
+    var formatter : NSFormatter
+    init (formatter :NSFormatter) {
+        self.formatter = formatter
+    }
+    var attributes :[String:String]?
+}
 
-struct Text: Printable {
-    
-    static let scale = 100 / 3
-    
+struct Text: CustomStringConvertible {
+
     var segments :[TextMark]?
     var actualString: String = ""
     var description: String { return actualString }
@@ -40,10 +57,17 @@ struct Text: Printable {
     //    }
 }
 
+extension Text {
+    func attributedString (styles :[TextStyles], formatters: [TextFormat]) -> NSAttributedString
+    {
+        return NSAttributedString (string: self.description)
+    }
+}
+
 extension Text: StringInterpolationConvertible {
 
     init<T>(stringInterpolationSegment expr: T) {
-        actualString = toString(expr)
+        actualString = String(expr)
         segments = [.Str(actualString)]
     }
     
@@ -61,17 +85,17 @@ extension Text: StringInterpolationConvertible {
     
     // here is a type-specific override for Int, that coverts
     // small numbers into words:
+    // Demonstratio
     init(@autoclosure stringInterpolationSegment expr: () -> Int) {
         let value = expr()
         if (0..<4).contains(value) {
-            println("Embigening \(value)")
+            print("Embigening \(value)")
             let numbers = ["zeo","one","two","three"]
             actualString = numbers[value]
         }
         else {
-            let r = value * Text.scale
-            println("Processing segment: " + toString(r))
-            actualString = toString(r)
+            print("Processing segment: " + String(value))
+            actualString = String(value)
         }
     }
     

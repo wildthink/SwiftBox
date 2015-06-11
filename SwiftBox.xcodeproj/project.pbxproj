@@ -11,6 +11,8 @@
 		96837F501B2492BF001B2590 /* SwiftBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96837F441B2492BF001B2590 /* SwiftBox.framework */; };
 		96837F571B2492BF001B2590 /* SwiftBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96837F561B2492BF001B2590 /* SwiftBoxTests.swift */; };
 		96837F641B2493E0001B2590 /* Textyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96837F631B2493E0001B2590 /* Textyle.swift */; };
+		96837F681B2511EE001B2590 /* Quantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96837F661B2511EE001B2590 /* Quantity.swift */; };
+		96837F691B2511EE001B2590 /* Relay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96837F671B2511EE001B2590 /* Relay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96110CD31B291EEB0023215B /* Linguistics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Linguistics.playground; sourceTree = "<group>"; };
+		964A278B1B2681EB00E0BF01 /* Sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sandbox.playground; sourceTree = "<group>"; };
 		96837F441B2492BF001B2590 /* SwiftBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96837F481B2492BF001B2590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96837F491B2492BF001B2590 /* SwiftBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftBox.h; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		96837F611B2493B4001B2590 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96837F621B2493B4001B2590 /* SwiftBox.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftBox.podspec; sourceTree = "<group>"; };
 		96837F631B2493E0001B2590 /* Textyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Textyle.swift; path = SwiftBox/Textyle.swift; sourceTree = "<group>"; };
+		96837F661B2511EE001B2590 /* Quantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quantity.swift; path = SwiftBox/Quantity.swift; sourceTree = "<group>"; };
+		96837F671B2511EE001B2590 /* Relay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Relay.swift; path = SwiftBox/Relay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +64,12 @@
 		96837F3A1B2492BF001B2590 = {
 			isa = PBXGroup;
 			children = (
+				96110CD31B291EEB0023215B /* Linguistics.playground */,
+				964A278B1B2681EB00E0BF01 /* Sandbox.playground */,
+				96837F661B2511EE001B2590 /* Quantity.swift */,
+				96837F671B2511EE001B2590 /* Relay.swift */,
 				96837F631B2493E0001B2590 /* Textyle.swift */,
-				96837F601B2493B4001B2590 /* LICENSE */,
-				96837F611B2493B4001B2590 /* README.md */,
+				96837F651B2511D4001B2590 /* Documents */,
 				96837F621B2493B4001B2590 /* SwiftBox.podspec */,
 				96837F461B2492BF001B2590 /* SwiftBox */,
 				96837F531B2492BF001B2590 /* SwiftBoxTests */,
@@ -109,6 +118,15 @@
 				96837F551B2492BF001B2590 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96837F651B2511D4001B2590 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				96837F601B2493B4001B2590 /* LICENSE */,
+				96837F611B2493B4001B2590 /* README.md */,
+			);
+			name = Documents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +185,8 @@
 		96837F3B1B2492BF001B2590 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = WildThink;
 				TargetAttributes = {
 					96837F431B2492BF001B2590 = {
@@ -218,6 +237,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96837F681B2511EE001B2590 /* Quantity.swift in Sources */,
+				96837F691B2511EE001B2590 /* Relay.swift in Sources */,
 				96837F641B2493E0001B2590 /* Textyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +284,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -341,6 +363,7 @@
 				INFOPLIST_FILE = SwiftBox/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wildthink.framework.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -358,6 +381,7 @@
 				INFOPLIST_FILE = SwiftBox/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wildthink.framework.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -376,6 +400,7 @@
 				);
 				INFOPLIST_FILE = SwiftBoxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wildthink.framework.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -389,6 +414,7 @@
 				);
 				INFOPLIST_FILE = SwiftBoxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wildthink.framework.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
