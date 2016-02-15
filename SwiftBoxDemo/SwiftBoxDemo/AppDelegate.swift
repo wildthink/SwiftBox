@@ -10,12 +10,16 @@ import Cocoa
 import SwiftBox
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 	@IBOutlet weak var window: NSWindow!
+    var parentNode: Node!
 
-	func applicationDidFinishLaunching(notification: NSNotification) {
-		let contentView = window.contentView as! NSView
-		let parent = Node(size: contentView.frame.size,
+	func applicationDidFinishLaunching(notification: NSNotification)
+    {
+        self.window.delegate = self
+        
+		let contentView = window.contentView! as NSView
+		parentNode = Node(size: contentView.frame.size,
                           direction: .Row,
                           childAlignment: .Center,
                           children: [
@@ -30,9 +34,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                  size: CGSize(width: 0, height: 180)),
 		])
 
-		let layout = parent.layout()
-		println(layout)
+		let layout = parentNode.layout()
+		Swift.print(layout)
 
 		layout.apply(contentView)
 	}
+    
+    func windowDidResize(notification: NSNotification) {
+        let contentView = window.contentView! as NSView
+        parentNode.size = contentView.frame.size
+        
+        let layout = parentNode.layout()
+        //		Swift.print(layout)
+        
+        layout.apply(contentView)
+    }
+    
+    func initializeLayout() {
+    }
 }
