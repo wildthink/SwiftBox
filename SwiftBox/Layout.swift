@@ -12,14 +12,23 @@ import Foundation
 /// 
 /// Layouts may not be created manually. They only ever come from laying out a 
 /// Node. See Node.layout.
-public struct Layout {
+
+public struct Layout
+{
 	public let frame: CGRect
+    public var layoutAttributes: [String: AnyObject]?
 	public let children: [Layout]
 
-	internal init(frame: CGRect, children: [Layout]) {
-		self.frame = frame
-		self.children = children
-	}
+    internal init(node: Node, children: [Layout]) {
+        self.frame = node.frame
+        self.layoutAttributes = node.layoutAttributes
+        self.children = children
+    }
+
+//	internal init(frame: CGRect, children: [Layout]) {
+//		self.frame = frame
+//		self.children = children
+//	}
 }
 
 extension Layout: CustomStringConvertible {

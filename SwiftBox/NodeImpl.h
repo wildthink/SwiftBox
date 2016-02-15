@@ -18,13 +18,13 @@
 
 @property (nonatomic, readonly, assign) css_node_t *node;
 
-@property (nonatomic, copy) NSArray *children;
+@property (nonatomic, copy) NSArray<NodeImpl*> *children;
 
 @property (nonatomic, readonly, assign) CGRect frame;
 
 @property (nonatomic, copy) CGSize (^measure)(CGFloat width);
 
-- (void)layout;
+//- (void)layout;
 
 - (void)layoutWithMaxWidth:(CGFloat)maxWidth;
 
