@@ -25,13 +25,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                           children: [
 			Node(flex: 75,
                  margin: Edges(left: 10, right: 10),
-                 size: CGSize(width: 0, height: 100)),
+                 size: CGSize(width: 0, height: 100), selfAlignment: .Stretch),
 			Node(flex: 15,
                  margin: Edges(right: 10),
-                 size: CGSize(width: 0, height: 50)),
+                 size: CGSize(width: 0, height: 50), selfAlignment: .Stretch),
 			Node(flex: 10,
                  margin: Edges(right: 10),
-                 size: CGSize(width: 0, height: 180)),
+                 size: CGSize(width: 0, height: 180), selfAlignment: .Stretch),
 		])
 
 		let layout = parentNode.layout()

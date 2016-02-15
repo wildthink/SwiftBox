@@ -107,8 +107,8 @@ public class Node: NodeImpl {
 	private func updateUnderlyingNode() -> NodeImpl {
 //		let node = NodeImpl()
 		node.memory.style.dimensions = (Float(size.width), Float(size.height))
-		node.memory.style.margin = margin.asTuple
-		node.memory.style.padding = padding.asTuple
+//		node.memory.style.margin = margin.asTuple
+//		node.memory.style.padding = padding.asTuple
 		node.memory.style.flex = Float(flex)
 		node.memory.style.flex_direction = css_flex_direction_t(direction.rawValue)
 		node.memory.style.flex_wrap = css_wrap_type_t(wrap ? 1 : 0)

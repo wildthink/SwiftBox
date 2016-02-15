@@ -68,7 +68,7 @@ static css_dim_t measureNode(void *context, float width) {
 - (void)layoutWithMaxWidth:(CGFloat)maxWidth {
 	[self prepareForLayout];
 
-	layoutNode(self.node, maxWidth);
+	layoutNode(self.node, maxWidth, CSS_DIRECTION_LTR);
 }
 
 - (CGRect)frame {
