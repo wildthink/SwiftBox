@@ -2,8 +2,6 @@
 
 import Cocoa
 
-var str = "Hello, playground"
-
 class Name : NSObject {
     var text : String
     var category : String
@@ -17,8 +15,8 @@ class Name : NSObject {
 extension String {
     subscript (r: Range<Int>) -> String {
         get {
-            let startIndex = advance(self.startIndex, r.startIndex)
-            let endIndex = advance(startIndex, r.endIndex - r.startIndex)
+            let startIndex = self.startIndex.advancedBy(r.startIndex)
+            let endIndex = startIndex.advancedBy(r.endIndex - r.startIndex)
             
             return self[Range(start: startIndex, end: endIndex)]
         }
@@ -121,9 +119,17 @@ extension String {
 
 let text = "Tom Jones went to New York to find some toys."
 
-text.topics(NSLinguisticTagPersonalName)
+text.topics(NSLinguisticTagPlaceName)
 
 
 text.getNames()
+
+//var item :CSSearchableItemAttributeSet
+
+// Create an attribute set for an item that represents an image.
+//CSSearchableItemAttributeSet* attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString*)kUTTypeImage];
+//// Set properties that describe attributes of the item such as title, description, and image.
+//[attributeSet setTitle:@"..."];
+//[attributeSet setContentDescription:@"..."];
 
 
