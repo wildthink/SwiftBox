@@ -104,7 +104,8 @@ extension Text: StringInterpolationConvertible {
     
     init(stringInterpolation strings: Text...) {
         // strings will be a bunch of Text objects
-        actualString = "".join(strings.map { $0.actualString })
+        let strings = strings.map { $0.actualString }
+        actualString = strings.joinWithSeparator("")
     }
 }
 

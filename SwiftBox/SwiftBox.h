@@ -5,8 +5,8 @@
 //  Created by Jason Jobe on 6/7/15.
 //  Copyright (c) 2015 WildThink. All rights reserved.
 //
-
 #import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for SwiftBox.
 FOUNDATION_EXPORT double SwiftBoxVersionNumber;
@@ -15,5 +15,4 @@ FOUNDATION_EXPORT double SwiftBoxVersionNumber;
 FOUNDATION_EXPORT const unsigned char SwiftBoxVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SwiftBox/PublicHeader.h>
-
 
